@@ -31,15 +31,13 @@ class SortVisualizer:
         algorithm_label = tk.Label(control_frame, text="Selecteaza algoritmul")
         algorithm_label.pack()
 
-        algorithm_menu = tk.OptionMenu(control_frame, self.algorithm_var, "Bubble Sort", "Insertion Sort",
-                                       "Selection Sort", "Bogo Sort")
+        algorithm_menu = tk.OptionMenu(control_frame, self.algorithm_var, "Bubble Sort", "Insertion Sort", "Selection Sort", "Bogo Sort")
         algorithm_menu.pack()
 
         speed_label = tk.Label(control_frame, text="Viteza")
         speed_label.pack()
 
-        speed_slider = tk.Scale(control_frame, from_=0.01, to_=1, resolution=0.01, orient="horizontal",
-                                variable=self.speed_var)
+        speed_slider = tk.Scale(control_frame, from_=0.01, to_=1, resolution=0.01, orient="horizontal",variable=self.speed_var)
         speed_slider.pack()
 
         random_button = tk.Button(control_frame, text="Randomizeaza", command=self.randomize)
@@ -89,8 +87,7 @@ class SortVisualizer:
             color = "green"
             if self.is_sorted and i == len(self.data) - 1:
                 color = "red"
-            self.canvas.create_rectangle(i * bar_width, self.height - value, (i + 1) * bar_width, self.height,
-                                         fill=color)
+            self.canvas.create_rectangle(i * bar_width, self.height - value, (i + 1) * bar_width, self.height, fill=color)
         self.root.update()
 
     def bubble_sort(self):
