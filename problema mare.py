@@ -5,10 +5,6 @@ from tkinter import messagebox
 import unicodedata
 
 
-def remove_diacritics(text):
-    return ''.join(c for c in unicodedata.normalize('NFD', text) if unicodedata.category(c) != 'Mn')
-
-
 def genereaza_cnp(sex, an, luna, zi, judet, nnn):
     S = str(sex)
     AA = str(an)[-2:]
